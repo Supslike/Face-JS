@@ -1,0 +1,137 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background-image: url("static/red-theatrical-curtain-background-illustration-vector.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    flex-direction: column;
+}
+
+h1 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 0.5in;
+    color: rgba(255, 255, 255, 0.692);
+    text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.445);
+}
+
+.container {
+    position: relative;
+    width: 500px;
+    height: 500px;
+}
+
+img {
+    position: absolute;
+}
+
+.eye {
+    z-index: 1;
+}
+
+#eye1 {
+    width: 80px;
+    height: auto;
+    top: 250px;
+    left: 145px;
+    cursor: pointer;
+}
+
+#eye2 {
+    width: 80px;
+    height: auto;
+    top: 250px;
+    left: 270px;
+    transform: rotateY(180deg);
+    cursor: pointer;
+}
+
+#eyebrow {
+    width: 230px;
+    height: auto;
+    top: 130px;
+    left: 130px;
+}
+
+#nose {
+    width: 60px;
+    height: auto;
+    top: 300px;
+    left: 220px;
+    cursor: pointer;
+}
+
+#mouth {
+    width: 100px;
+    height: auto;
+    top: 370px;
+    left: 200px;
+    cursor: pointer;
+}
+
+#ear1 {
+    width: 65px;
+    height: 90px;
+    position: absolute;
+    top: 295px;
+    left: 40px;
+    cursor: pointer;
+}
+ 
+#ear2 {
+    width: 65px;
+    height: 90px;
+    position: absolute;
+    top: 290px;
+    left: 400px;
+    cursor: pointer;
+}
+
+.message {
+    position: absolute;
+    background-color: rgba(202, 204, 203, 0.525);
+    width: 400px;
+    height: 200px;
+    padding: 5%;
+    border-radius: 20px;
+    left: 500px;
+    border: black solid 2px;
+    display: none;
+}
+
+p {
+    font-family: Arial, Helvetica, sans-serif;
+    text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.236);
+}
+
+@keyframes text_shake {
+    0% { 
+        transform: translate(0, 0) rotate(0deg);
+        color: red;
+    }
+
+    25% { 
+        transform: translate(1px, 1px) rotate(1deg); 
+    }
+
+    50% { 
+        transform: translate(0, 0) rotate(0eg); 
+    }
+
+    75% { 
+        transform: translate(-1px, 1px) rotate(-1deg); 
+    }
+
+    100% { 
+        transform: translate(0, 0) rotate(0deg); 
+    }
+}
