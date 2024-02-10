@@ -23,9 +23,9 @@ body {
 
 .title {
     position: absolute;
-    top: 17%;
+    top: 25vh;
     text-align: left;
-    left: 5%;
+    left: 10vh;
     backdrop-filter: blur(2px);
     padding: 2%;
 }
@@ -35,7 +35,7 @@ body {
     font-weight: 900;
     color: white;
     text-shadow: 0px 0px 5px black;
-    font-size: 60px;
+    font-size: 8vh;
 }
 
 .title p {
@@ -48,81 +48,82 @@ body {
 }
 
 .ear {
-    top: 48%;
-    left: 40%;
-    height: 100px;
-    width: 95px;
+    top: 46vh;
+    left: 85vh;
+    height: 13vh;
+    width: 12vh;
 }
 
 .ear2 {
-    top: 48%;
-    left: 63.5%;
-    height: 100px;
-    width: 95px;
+    top: 46vh;
+    left: 129vh;
+    height: 13vh;
+    width: 12vh;
 }
 
 .eyes {
-    top: 44%;
-    left: 47%;
-    height: 60px;
-    width: 230px;
+    top: 43vh;
+    left: 98vh;
+    height: 9vh;
+    width: 30vh;
 }
 
 .nose {
-    top: 53%;
-    left: 53%;
-    height: 32px;
-    width: 60px;
+    top: 52vh;
+    left: 108vh;
+    height: 4vh;
+    width: 10vh;
 }
 
 .mouth {
-    top: 58%;
-    left: 53%;
-    height: 32px;
-    width: 60px;
+    top: 56vh;
+    left: 108vh;
+    height: 5vh;
+    width: 10vh;
 }
 
 .cheeks {
-    top: 54%;
-    left: 48%;
-    height: 50px;
-    width: 60px;
+    top: 52vh;
+    left: 118vh;
+    height: 10vh;
+    width: 8vh;
     border-radius: 50%;
 }
 
 .cheeks2 {
-    top: 54%;
-    left: 58%;
-    height: 50px;
-    width: 60px;
+    top: 52vh;
+    left: 100vh;
+    height: 10vh;
+    width: 8vh;
     border-radius: 50%;
 }
 
 .bow-tie {
-    top: 15%;
-    left: 47%;
-    height: 150px;
-    width: 230px;
+    top: 12vh;
+    left: 95vh;
+    height: 25vh;
+    width: 37vh;
 }
 
 .neck {
-    top: 65%;
-    left: 53%;
-    height: 32px;
-    width: 60px;
+    top: 63vh;
+    left: 108vh;
+    height: 8vh;
+    width: 10vh;
 }
 
 #yuki {
     position: absolute;
-    width: 50%;
-    left: 30%;
+    height: 85vh;
+    left: 64vh;
+    top: 2vh;
 }
 
 #half_body {
     position: absolute;
-    width: 49%;
-    left: 30.5%;
-    top: 89.6vh;
+    height: 22.41vh;
+    left: 65vh;
+    top: 87vh;
     z-index: -1;
 }
 
