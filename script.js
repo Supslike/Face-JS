@@ -21,8 +21,14 @@ const ear2Element = document.getElementById("ear2");
 const neckElement = document.getElementById("neck");
 const yuki = document.getElementById("yuki");
 const message = document.getElementById("text-area");
+const speaker = document.getElementById("speaker");
+const bgm = document.getElementById("bgMusic");
+const sfx = document.getElementById("gsfx");
 
+var muted = false
 var disable_click = false
+bgm.play();
+sfx.volume = "0.5";
 
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
@@ -30,6 +36,12 @@ function sleep(ms) {
 
 function BackToDefault() {
     yuki.src = default_face;
+}
+
+async function PlayAudio(audio, delay) {
+    await sleep(delay);
+    sfx.src = audio;
+    sfx.play();
 }
 
 async function DisplayImage(sequence_img) {
@@ -44,7 +56,7 @@ async function DisplayText(sequence_text) {
     for (let i = 0; i < sequence_text.length; i++) {
         for (let o = 0; o < sequence_text[i]["text"].length; o++) {
             message.innerHTML += sequence_text[i]["text"].charAt(o);
-            await sleep(50);
+            await sleep(20);
         }
         message.innerHTML += "...&nbsp&nbsp&nbsp"
         await sleep(sequence_text[i]["duration"]);
@@ -53,6 +65,20 @@ async function DisplayText(sequence_text) {
     }
 }
 
+speaker.addEventListener("click", function() {
+    if (muted) {
+        muted = false;
+        speaker.src = "./static/speaker.png";
+        bgm.play();
+    }
+
+    else {
+        muted = true;
+        speaker.src = "./static/mute.png";
+        bgm.pause()
+    }
+})
+
 // Add event listeners to each element
 earElement.addEventListener("click", async function() {
     if (disable_click) {
@@ -60,7 +86,11 @@ earElement.addEventListener("click", async function() {
     } else {
         disable_click = true;
     }
-    await Promise.all([DisplayImage([
+    await Promise.all([
+        PlayAudio(
+            "./static/ears.mp3", 0
+        ),
+        DisplayImage([
         {"src": ear, "duration": 3000},
         {"src": mouth2, "duration": 7000},
         {"src": default_face, "duration": 2000}
@@ -80,7 +110,11 @@ ear2Element.addEventListener("click", async function() {
     } else {
         disable_click = true;
     }
-    await Promise.all([DisplayImage([
+    await Promise.all([
+        PlayAudio(
+            "./static/ears.mp3", 0
+        ),
+        DisplayImage([
         {"src": ear, "duration": 3000},
         {"src": mouth2, "duration": 7000},
         {"src": default_face, "duration": 2000}
@@ -100,7 +134,11 @@ bowElement.addEventListener("click", async function() {
     } else {
         disable_click = true;
     }
-    await Promise.all([DisplayImage([
+    await Promise.all([
+        PlayAudio(
+            "./static/bowtie.mp3", 0
+        ),
+        DisplayImage([
         {"src": eyes, "duration": 2000},
         {"src": default_face, "duration": 2000}
     ]), DisplayText([
@@ -119,7 +157,11 @@ noseElement.addEventListener("click", async function() {
     } else {
         disable_click = true;
     }
-    await Promise.all([DisplayImage([
+    await Promise.all([
+        PlayAudio(
+            "./static/nose.MP3", 2000
+        ),
+        DisplayImage([
         {"src": sneeze1, "duration": 1000},
         {"src": sneeze2, "duration": 1000},
         {"src": sneeze3, "duration": 1000},
@@ -139,7 +181,8 @@ eyesElement.addEventListener("click", async function() {
     } else {
         disable_click = true;
     }
-    await Promise.all([DisplayImage([
+    await Promise.all([
+        DisplayImage([
         {"src": eyes, "duration": 1000}
     ]), DisplayText([
         {"text": "Oh! My Eyes", "duration": 1000},
@@ -156,7 +199,8 @@ mouthElement.addEventListener("click", async function() {
     } else {
         disable_click = true;
     }
-    await Promise.all([DisplayImage([
+    await Promise.all([
+        DisplayImage([
         {"src": mouth1, "duration": 2000},
         {"src": mouth2, "duration": 4000},
         {"src": default_face, "duration": 2000},
@@ -175,7 +219,11 @@ cheeksElement.addEventListener("click", async function() {
     } else {
         disable_click = true;
     }
-    await Promise.all([DisplayImage([
+    await Promise.all([
+        PlayAudio(
+            "./static/cheeks.mp3", 0
+        ),
+        DisplayImage([
         {"src": cheeks, "duration": 7000},
         {"src": default_face, "duration": 1000},
     ]), DisplayText([
@@ -193,7 +241,11 @@ cheeks2Element.addEventListener("click", async function() {
     } else {
         disable_click = true;
     }
-    await Promise.all([DisplayImage([
+    await Promise.all([
+        PlayAudio(
+            "./static/cheeks.mp3", 0
+        ),
+        DisplayImage([
         {"src": cheeks, "duration": 7000},
         {"src": default_face, "duration": 1000},
     ]), DisplayText([
@@ -211,7 +263,11 @@ neckElement.addEventListener("click", async function() {
     } else {
         disable_click = true;
     }
-    await Promise.all([DisplayImage([
+    await Promise.all([
+        PlayAudio(
+            "./static/neck.mp3", 0
+        ),
+        DisplayImage([
         {"src": cheeks, "duration": 2000},
         {"src": hungry, "duration": 7000},
         {"src": default_face, "duration": 1000},
