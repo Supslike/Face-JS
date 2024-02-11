@@ -31,7 +31,7 @@ const sfx = document.getElementById("gsfx");
 var muted = false
 var disable_click = false
 bgm.play();
-sfx.volume = "0.5";
+sfx.volume = "0.8";
 
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
