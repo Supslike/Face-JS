@@ -1,3 +1,6 @@
+const MESSGAE_SPEED = 20;
+const NOSE_SFX = "./static/nose.MP3";
+
 const cheeks = "./static/cheeks.png";
 const default_face = "./static/default.png";
 const eyes = "./static/eyes.png";
@@ -56,7 +59,7 @@ async function DisplayText(sequence_text) {
     for (let i = 0; i < sequence_text.length; i++) {
         for (let o = 0; o < sequence_text[i]["text"].length; o++) {
             message.innerHTML += sequence_text[i]["text"].charAt(o);
-            await sleep(20);
+            await sleep(MESSGAE_SPEED);
         }
         message.innerHTML += "...&nbsp&nbsp&nbsp"
         await sleep(sequence_text[i]["duration"]);
@@ -159,7 +162,7 @@ noseElement.addEventListener("click", async function() {
     }
     await Promise.all([
         PlayAudio(
-            "./static/nose.MP3", 2000
+            NOSE_SFX, 2000
         ),
         DisplayImage([
         {"src": sneeze1, "duration": 1000},
